@@ -3,7 +3,7 @@
     "javascript-lp-solver": "^0.4.5"
   },
   "name": "beer-water",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Calculates additives to achieve desired water chemistry",
   "main": "index.js",
   "devDependencies": {
