@@ -1,8 +1,8 @@
 module.exports = {
-  Calcium: 'calcium',
-  Magnesium: 'magnesium',
-  Sodium: 'sodium',
-  Chloride: 'chloride',
-  Sulfate: 'sulfate',
-  Carbonate: 'carbonate',
+  Calcium: 'Calcium',
+  Magnesium: 'Magnesium',
+  Sodium: 'Sodium',
+  Chloride: 'Chloride',
+  Sulfate: 'Sulfate',
+  Carbonate: 'Carbonate',
 };

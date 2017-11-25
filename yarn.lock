@@ -2,10 +2,6 @@
 # yarn lockfile v1
 
 
-bignumber.js@2.0.7:
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-2.0.7.tgz#86eb0707cf6a5110909d23e6ea7434c14f500f1c"
-
-na-gaussian-elimination@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/na-gaussian-elimination/-/na-gaussian-elimination-0.0.4.tgz#6bf03f01d59634109c954fb44e792a9e65400f3a"
+javascript-lp-solver@^0.4.5:
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/javascript-lp-solver/-/javascript-lp-solver-0.4.5.tgz#597106f586b4843a4ce51c7e6dc8a91f8a929c3f"

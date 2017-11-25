@@ -1,51 +1,36 @@
-let ions = require('./ions');
+let solver = require('javascript-lp-solver/src/solver');
 let additives = require('./additives');
-var GaussianElimination = require('na-gaussian-elimination');
-var BigNumber = require('bignumber.js');
+let ions = require('./ions');
 
-let calculator = (input) => {
-  let gaussianElimination = new GaussianElimination();
-  matrixInput = [];
-
-  let additivePosition = 0;
-  for (additive in additives.Contributions) {
-    additives.Contributions[additive].forEach((ppm, index) => {
-      matrixInput[index] = matrixInput[index] || [];
-      matrixInput[index][additivePosition] = new BigNumber(ppm);
-    });
-    additivePosition++;
-  }
-
-  let result = [
-    new BigNumber(115),
-    new BigNumber(0),
-    new BigNumber(0),
-    new BigNumber(59),
-    new BigNumber(201),
-    new BigNumber(0),
-    new BigNumber(0),
-  ];
-
-  //gaussianElimination.on('swapRows', function(ev) {
-      //console.log('swap rows ' + ev.i + ' and ' + ev.j);
-  //});
-  gaussianElimination.on('error', function(error) {
-      console.log('error: ' + error);
-  });
-
-  var system = gaussianElimination.solve(matrixInput, result);
-
-  system.solution.forEach((amount, index) => {
-    console.log(additives.Sequence[index] + ': ' + amount.round(3) + ' grams/Gallon');
-  });
+let problem = {
+  //"optimize": "Price",
+  //"opType": "min",
+  constraints : {},
+  variables: {}
 };
 
-let input = [115, 0, 0, 59, 201, 0];
-//input[ions.Calcium] = 115;
-//input[ions.Magnesium] = 0;
-//input[ions.Sodium] = 0;
-//input[ions.Chloride] = 59;
-//input[ions.Sulfate] = 201;
-//input[ions.Carbonate] = 0;
+for (additive in additives) {
+  problem.variables[additive] = additives[additive].contents;
+}
 
-calculator(input);
+problem.constraints = {};
+problem.constraints[ions.Calcium] = { equal: 115 };
+problem.constraints[ions.Chloride] = { equal: 59 };
+problem.constraints[ions.Sulfate] = { equal: 201 };
+
+let results = solver.Solve(problem);
+
+if (results.feasible) {
+  for (additive in additives) {
+    if (!results[additive]) { continue; }
+
+    let name = additive;
+    if (additives[additive].friendlyName) {
+      name = additives[additive].friendlyName + ' (' + additive + ')';
+    }
+
+    console.log(results[additive].toPrecision(3) + 'g of ' + name);
+  }
+} else {
+  console.log("Can't be done");
+}
