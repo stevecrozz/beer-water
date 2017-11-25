@@ -2,7 +2,7 @@
   "dependencies": {
     "javascript-lp-solver": "^0.4.5"
   },
-  "name": "beer-water-calc",
+  "name": "beer-water",
   "version": "0.1.0",
   "description": "Calculates additives to achieve desired water chemistry",
   "main": "index.js",
@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stevecrozz/beer-water-calculator.git"
+    "url": "git+https://github.com/stevecrozz/beer-water.git"
   },
   "author": "Stephen Crosby <stevecrozz@gmail.com> (lithostech.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/stevecrozz/beer-water-calculator/issues"
+    "url": "https://github.com/stevecrozz/beer-water/issues"
   },
-  "homepage": "https://github.com/stevecrozz/beer-water-calculator#readme"
+  "homepage": "https://github.com/stevecrozz/beer-water#readme"
 }
