@@ -43,8 +43,8 @@ createAdditive({
   name: 'Sodium Chloride',
   friendlyName: 'Table Salt',
   contents: [
-    [ ions.Calcium, 104 ],
-    [ ions.Sulfate, 160.25 ],
+    [ ions.Sodium, 104 ],
+    [ ions.Chloride, 160.25 ],
   ]
 });
 
@@ -52,8 +52,8 @@ createAdditive({
   name: 'Magnesium Sulfate',
   friendlyName: 'Epsom Salt',
   contents: [
-    [ ions.Calcium, 37 ],
-    [ ions.Sulfate, 145.3 ],
+    [ ions.Magnesium, 26 ],
+    [ ions.Sulfate, 103 ],
   ]
 });
 
@@ -61,8 +61,8 @@ createAdditive({
   name: 'Sodium Bicarbonate',
   friendlyName: 'Baking Soda',
   contents: [
-    [ ions.Calcium, 75 ],
-    [ ions.Carbonate, 95 ],
+    [ ions.Sodium, 75 ],
+    [ ions.Carbonate, 191.9 ],
   ]
 });
 

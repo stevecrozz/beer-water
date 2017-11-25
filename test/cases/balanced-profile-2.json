@@ -1,0 +1,21 @@
+{
+  "input": {
+    "Calcium": 150,
+    "Magnesium": 10,
+    "Sodium": 80,
+    "Chloride": 150,
+    "Sulfate": 160,
+    "Carbonate": 220
+  },
+  "output": {
+    "feasible": true,
+    "additives": {
+      "Calcium Carbonate": 0.632,
+      "Calcium Chloride": 0.618,
+      "Calcium Sulfate": 0.749,
+      "Magnesium Sulfate": 0.404,
+      "Sodium Bicarbonate": 0.566,
+      "Sodium Chloride": 0.4
+    }
+  }
+}
