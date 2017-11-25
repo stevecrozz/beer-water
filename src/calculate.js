@@ -16,5 +16,16 @@ for (additive in additives) {
 module.exports = (constraints) => {
   let p = Object.assign({}, problem);
   p.constraints = constraints;
-  return solver.Solve(p);
+  let solution = solver.Solve(p);
+  let s = {
+    feasible: solution.feasible,
+    result: solution.result,
+    bounded: solution.result,
+    additives: {}
+  };
+  for (component in solution) {
+    if (!additives[component]) { continue; }
+    s.additives[component] = solution[component].toPrecision(3);
+  }
+  return s;
 };
